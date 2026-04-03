@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moonhouse Investments Limited — International Real Estate</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5f0e8;
+    --dark: #1a1710;
+    --gold: #b8955a;
+    --gold-light: #d4b07a;
+    --text: #3a3628;
+    --muted: #8a8070;
+    --white: #ffffff;
+    --border: rgba(184,149,90,0.2);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+    background: rgba(26,23,16,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(184,149,90,0.15);
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-phone {
+    color: var(--gold);
+    font-size: 13px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+
+  /* HERO */
+  .hero {
+    height: 100vh;
+    min-height: 700px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 80px;
+    background: linear-gradient(135deg, #1a1710 0%, #2d2618 50%, #1a1710 100%);
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.25;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(26,23,16,0.9) 40%, rgba(26,23,16,0.4));
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    animation: fadeUp 1s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero p {
+    color: rgba(255,255,255,0.6);
+    font-size: 16px;
+    margin-bottom: 48px;
+    max-width: 480px;
+  }
+
+  /* SEARCH BOX */
+  .search-box {
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(184,149,90,0.3);
+    border-radius: 4px;
+    padding: 28px 32px;
+    max-width: 800px;
+    backdrop-filter: blur(8px);
+    animation: fadeUp 1s 0.2s ease both;
+  }
+
+  .search-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 16px;
+    align-items: end;
+  }
+
+  .search-field label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .search-field select,
+  .search-field input {
+    width: 100%;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(184,149,90,0.2);
+    border-radius: 3px;
+    padding: 10px 14px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+
+  .search-field select option { background: #1a1710; color: white; }
+  .search-field select:focus,
+  .search-field input:focus { border-color: var(--gold); }
+
+  .btn-gold {
+    background: var(--gold);
+    color: var(--dark);
+    border: none;
+    padding: 12px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.2s, transform 0.1s;
+    white-space: nowrap;
+  }
+
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* SECTIONS */
+  section { padding: 96px 80px; }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 3.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--dark);
+    margin-bottom: 48px;
+  }
+
+  /* PROPERTIES */
+  .properties { background: var(--white); }
+
+  .props-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .prop-card {
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+
+  .prop-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(26,23,16,0.12);
+  }
+
+  .prop-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .prop-badges {
+    position: absolute;
+    top: 14px; left: 14px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  .badge-hot { background: #c0392b; color: white; }
+  .badge-sea { background: rgba(0,120,180,0.85); color: white; }
+  .badge-top { background: rgba(26,23,16,0.75); color: var(--gold); border: 1px solid var(--gold); }
+  .badge-new { background: var(--gold); color: var(--dark); }
+
+  .prop-body { padding: 20px 22px 24px; }
+
+  .prop-location {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .prop-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+
+  .prop-price {
+    color: var(--gold);
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .prop-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .prop-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .status-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+  .status-done { background: #27ae60; }
+  .status-build { background: var(--gold); }
+
+  /* STATS */
+  .stats { background: var(--dark); }
+
+  .stats .section-title { color: var(--white); }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: rgba(184,149,90,0.15);
+    border: 1px solid rgba(184,149,90,0.15);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .stat-item {
+    background: rgba(255,255,255,0.03);
+    padding: 40px 36px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.5px;
+  }
+
+  /* COUNTRIES MAP */
+  .countries { background: var(--cream); }
+
+  .countries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  .country-card {
+    position: relative;
+    height: 120px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .country-card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s;
+  }
+
+  .country-card:hover .country-card-bg { transform: scale(1.07); }
+
+  .country-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,23,16,0.8), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 14px;
+  }
+
+  .country-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  .country-count {
+    color: var(--gold-light);
+    font-size: 11px;
+  }
+
+  /* FORM */
+  .consultation { background: var(--dark); }
+
+  .consult-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .consult-img {
+    height: 480px;
+    border-radius: 4px;
+    background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .consult-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(184,149,90,0.3);
+    border-radius: 4px;
+    top: 16px; left: 16px;
+    pointer-events: none;
+  }
+
+  .consult-form .section-title { color: white; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(184,149,90,0.2);
+    border-radius: 3px;
+    padding: 12px 16px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+
+  .form-group select option { background: #1a1710; }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  /* PARTNERS */
+  .partners { background: var(--white); }
+
+  .partners-track {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px 0;
+    mask: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .partner-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--muted);
+    white-space: nowrap;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .partner-name:hover { color: var(--gold); }
+
+  /* BLOG */
+  .blog { background: var(--cream); }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .blog-card {
+    cursor: pointer;
+  }
+
+  .blog-img {
+    height: 200px;
+    border-radius: 4px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    transition: opacity 0.3s;
+  }
+
+  .blog-card:hover .blog-img { opacity: 0.85; }
+
+  .blog-date {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .blog-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .blog-card:hover .blog-title { color: var(--gold); }
+
+  .blog-excerpt { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* ABOUT */
+  .about { background: var(--white); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-text p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .about-img {
+    height: 500px;
+    background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .about-award {
+    position: absolute;
+    bottom: 24px;
+    right: -24px;
+    background: var(--dark);
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    padding: 20px 24px;
+    text-align: center;
+    min-width: 160px;
+  }
+
+  .award-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .award-label {
+    font-size: 10px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #111009;
+    padding: 64px 80px 32px;
+    border-top: 1px solid rgba(184,149,90,0.15);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .footer-about {
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .footer-contact {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 2;
+  }
+
+  .footer-contact a { color: var(--gold); text-decoration: none; }
+
+  .footer-col h4 {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col ul a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* Divider line */
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 40px;
+  }
+
+  .see-all {
+    display: inline-block;
+    margin-top: 40px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(184,149,90,0.4);
+    padding-bottom: 4px;
+    transition: border-color 0.2s;
+  }
+  .see-all:hover { border-color: var(--gold); }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    section { padding: 64px 24px; }
+    .hero { padding: 0 24px; }
+    .search-row { grid-template-columns: 1fr; }
+    .consult-grid, .about-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .consult-img, .about-img { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Moonhouse Investments Limited</a>
+  <ul class="nav-links">
+    <li><a href="#properties">Projects</a></li>
+    <li><a href="#countries">Countries</a></li>
+    <li><a href="#investments">Investments</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:+77001234567" class="nav-phone">+7 700 123 4567</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero" style="margin-top:0; padding-top:72px;">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-tag">International real estate agency</p>
+    <h1>Properties for <em>life</em> and overseas investments</h1>
+    <p>Over 500 properties in 20 countries. Selection, legal support, asset management.</p>
+  </div>
+  <div class="search-box" style="margin-top:36px;">
+    <div class="search-row">
+      <div class="search-field">
+        <label>Country</label>
+        <select>
+          <option>Not selected</option>
+          <option>UAE</option>
+          <option>Thailand</option>
+          <option>Turkey</option>
+          <option>Indonesia</option>
+          <option>Portugal</option>
+          <option>Greece</option>
+          <option>Spain</option>
+          <option>UK</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <label>Type</label>
+        <select>
+          <option>Not selected</option>
+          <option>Apartments</option>
+          <option>Villa</option>
+          <option>Penthouse</option>
+          <option>Townhouse</option>
+          <option>Studio</option>
+          <option>Commercial</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <label>Budget, $</label>
+        <select>
+          <option>Not selected</option>
+          <option>up to 100 000</option>
+          <option>100 000 – 300 000</option>
+          <option>300 000 – 700 000</option>
+          <option>700 000 – 2 000 000</option>
+          <option>from 2 000 000</option>
+        </select>
+      </div>
+      <button class="btn-gold">Search</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOP PROPERTIES -->
+<section class="properties" id="properties">
+  <p class="section-label">Best deals</p>
+  <h2 class="section-title">Top properties</h2>
+  <div class="divider"></div>
+  <div class="props-grid">
+
+    <div class="prop-card">
+      <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=75')">
+        <div class="prop-badges">
+          <span class="badge badge-hot">Hot offer</span>
+          <span class="badge badge-sea">Sea view</span>
+        </div>
+      </div>
+      <div class="prop-body">
+        <p class="prop-location">UAE, Dubai, Marina</p>
+        <p class="prop-name">Azure Residences</p>
+        <p class="prop-price">from 285 000 USD</p>
+        <p class="prop-desc">Luxury apartments with views of the Persian Gulf and full infrastructure.</p>
+        <div class="prop-footer">
+          <span><span class="status-dot status-build"></span>Under construction</span>
+          <span>Q4 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600&q=75')">
+        <div class="prop-badges">
+          <span class="badge badge-top">Top offer</span>
+        </div>
+      </div>
+      <div class="prop-body">
+        <p class="prop-location">Thailand, Phuket, Rawai</p>
+        <p class="prop-name">Palma Villas</p>
+        <p class="prop-price">from 145 000 USD</p>
+        <p class="prop-desc">Cozy villas in tropical nature, 800 m from the beach with swimming pools.</p>
+        <div class="prop-footer">
+          <span><span class="status-dot status-build"></span>Under construction</span>
+          <span>Q2 2025</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=75')">
+        <div class="prop-badges">
+          <span class="badge badge-new">New</span>
+          <span class="badge badge-sea">Sea view</span>
+        </div>
+      </div>
+      <div class="prop-body">
+        <p class="prop-location">Portugal, Algarve</p>
+        <p class="prop-name">Quinta da Luz</p>
+        <p class="prop-price">from 620 000 USD</p>
+        <p class="prop-desc">Exclusive villas in one of Europe’s most popular resort regions.</p>
+        <div class="prop-footer">
+          <span><span class="status-dot status-done"></span>Completed</span>
+          <span>Q3 2023</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=75')">
+        <div class="prop-badges">
+          <span class="badge badge-hot">Hot offer</span>
+        </div>
+      </div>
+      <div class="prop-body">
+        <p class="prop-location">Indonesia, Bali, Canggu</p>
+        <p class="prop-name">Sungai Villas</p>
+        <p class="prop-price">220 000 – 480 000 USD</p>
+        <p class="prop-desc">Modern villas with private pools 5 minutes from Indian Ocean shore.</p>
+        <div class="prop-footer">
+          <span><span class="status-dot status-build"></span>Under construction</span>
+          <span>Q1 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=75')">
+        <div class="prop-badges">
+          <span class="badge badge-top">Top offer</span>
+          <span class="badge badge-sea">Sea view</span>
+        </div>
+      </div>
+      <div class="prop-body">
+        <p class="prop-location">Turkey, Antalya, Konyaaltı</p>
+        <p class="prop-name">Riviera Park</p>
+        <p class="prop-price">from 89 000 USD</p>
+        <p class="prop-desc">Residential complex with Mediterranean views, pools and fitness center.</p>
+        <div class="prop-footer">
+          <span><span class="status-dot status-done"></span>Completed</span>
+          <span>Q2 2024</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-card">
+      <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=75')">
+        <div class="prop-badges">
+          <span class="badge badge-new">New</span>
+        </div>
+      </div>
+      <div class="prop-body">
+        <p class="prop-location">Greece, Athens, Glyfada</p>
+        <p class="prop-name">Aegean Heights</p>
+        <p class="prop-price">from 390 000 USD</p>
+        <p class="prop-desc">Luxury apartments in a prestigious Athens neighborhood with residency options.</p>
+        <div class="prop-footer">
+          <span><span class="status-dot status-build"></span>Under construction</span>
+          <span>Q3 2026</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <a href="#" class="see-all">All properties →</a>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <p class="section-label">Numbers and facts</p>
+  <h2 class="section-title">Why it is profitable to invest with us</h2>
+  <div class="divider" style="background:rgba(184,149,90,0.4)"></div>
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num">20+</div>
+      <div class="stat-label">investment countries</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">properties in portfolio</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">$1.2B</div>
+      <div class="stat-label">total transaction volume</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">12+</div>
+      <div class="stat-label">years on the market</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100+</div>
+      <div class="stat-label">global partners</div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTRIES -->
+<section class="countries" id="countries">
+  <p class="section-label">Destinations</p>
+  <h2 class="section-title">Choose a country</h2>
+  <div class="divider"></div>
+  <div class="countries-grid">
+    <div class="country-card">
+      <div class="country-card-bg" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&q=70')"></div>
+      <div class="country-card-overlay">
+        <p class="country-name">UAE</p>
+        <p class="country-count">40 properties</p>
+      </div>
+    </div>
+    <div class="country-card">
+      <div class="country-card-bg" style="background-image:url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=400&q=70')"></div>
+      <div class="country-card-overlay">
+        <p class="country-name">Thailand</p>
+        <p class="country-count">28 properties</p>
+      </div>
+    </div>
+    <div class="country-card">
+      <div class="country-card-bg" style="background-image:url('https://images.unsplash.com/photo-1527838832700-5059252407fa?w=400&q=70')"></div>
+      <div class="country-card-overlay">
+        <p class="country-name">Turkey</p>
+        <p class="country-count">35 properties</p>
+      </div>
+    </div>
+    <div class="country-card">
+      <div class="country-card-bg" style="background-image:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&q=70')"></div>
+      <div class="country-card-overlay">
+        <p class="country-name">Indonesia</p>
+        <p class="country-count">17 properties</p>
+      </div>
+    </div>
+    <div class="country-card">
+      <div class="country-card-bg" style="background-image:url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=400&q=70')"></div>
+      <div class="country-card-overlay">
+        <p class="country-name">Portugal</p>
+        <p class="country-count">12 properties</p>
+      </div>
+    </div>
+    <div class="country-card">
+      <div class="country-card-bg" style="background-image:url('https://images.unsplash.com/photo-1503152394-c571994fd383?w=400&q=70')"></div>
+      <div class="country-card-overlay">
+        <p class="country-name">Greece</p>
+        <p class="country-count">9 properties</p>
+      </div>
+    </div>
+    <div class="country-card">
+      <div class="country-card-bg" style="background-image:url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=400&q=70')"></div>
+      <div class="country-card-overlay">
+        <p class="country-name">Spain</p>
+        <p class="country-count">14 properties</p>
+      </div>
+    </div>
+    <div class="country-card">
+      <div class="country-card-bg" style="background-image:url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&q=70')"></div>
+      <div class="country-card-overlay">
+        <p class="country-name">UK</p>
+        <p class="country-count">22 properties</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTATION FORM -->
+<section class="consultation" id="contact">
+  <div class="consult-grid">
+    <div class="consult-img"></div>
+    <div class="consult-form">
+      <p class="section-label">Free</p>
+      <h2 class="section-title">Get expert consultation</h2>
+      <div class="divider" style="background:rgba(184,149,90,0.4)"></div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Name *</label>
+          <input type="text" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label>Phone *</label>
+          <input type="tel" placeholder="+7 (___) ___-__-__">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Purpose</label>
+        <select>
+          <option>Not selected</option>
+          <option>Residential property purchase</option>
+          <option>Investments</option>
+          <option>Citizenship / residence permit</option>
+          <option>Commercial property</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Comment</label>
+        <textarea placeholder="Tell us about your requirements..."></textarea>
+      </div>
+      <button class="btn-gold" style="width:100%;padding:14px;">Get consultation</button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="section-label">About</p>
+      <h2 class="section-title">Moonhouse Investments Limited</h2>
+      <div class="divider"></div>
+      <p>Moonhouse Investments Limited is a private limited company registered in Cyprus on March 28, 1998</p>
+      <p>In 2022 and 2023 the company received international awards Asia Pacific Property Awards in the category Best Real Estate Agency. Our clients have invested more than $1.2 billion in properties worldwide.</p>
+      <a href="#" class="see-all">Learn more about the company →</a>
+    </div>
+    <div class="about-img">
+      <div class="about-award">
+        <div class="award-year">2023</div>
+        <div class="award-label">Best Real Estate Agency</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners">
+  <p class="section-label">Our partners</p>
+  <h2 class="section-title" style="margin-bottom:40px;">100+ partners worldwide</h2>
+  <div class="partners-track">
+    <span class="partner-name">EMAAR</span>
+    <span class="partner-name">ALDAR</span>
+    <span class="partner-name">MERAAS</span>
+    <span class="partner-name">Ellington</span>
+    <span class="partner-name">Damac</span>
+    <span class="partner-name">Select Group</span>
+    <span class="partner-name">Berkeley</span>
+    <span class="partner-name">Barratt</span>
+    <span class="partner-name">Tropicana</span>
+    <span class="partner-name">Ariane</span>
+    <span class="partner-name">RAK Properties</span>
+    <span class="partner-name">London Square</span>
+    <span class="partner-name">EMAAR</span>
+    <span class="partner-name">ALDAR</span>
+    <span class="partner-name">MERAAS</span>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <p class="section-label">Latest</p>
+  <h2 class="section-title">Latest articles</h2>
+  <div class="divider"></div>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <div class="blog-img" style="background-image:url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&q=70')"></div>
+      <p class="blog-date">March 12, 2024</p>
+      <p class="blog-title">How to buy real estate in Thailand: from selection to ownership</p>
+      <p class="blog-excerpt">A complete guide to buying property at a popular resort — legal nuances, taxes, and the best areas.</p>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=70')"></div>
+      <p class="blog-date">February 26, 2024</p>
+      <p class="blog-title">UAE Golden Visa: benefits and how to get it in 2024</p>
+      <p class="blog-excerpt">We analyze all residency programs in the Emirates — who qualifies, costs and requirements.</p>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=70')"></div>
+      <p class="blog-date">January 10, 2024</p>
+      <p class="blog-title">Investing in Bali: why the island has become a capital magnet</p>
+      <p class="blog-excerpt">Market analysis, rental yields, legal aspects and the best districts for investment in 2024.</p>
+    </div>
+  </div>
+  <a href="#" class="see-all">All articles →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="#" class="footer-logo">Moonhouse Investments Limited</a>
+      <p class="footer-about">Moonhouse Investments Limited is a private limited company registered in Cyprus on March 28, 1998</p>
+      <div class="footer-contact">
+        <div>UAE, Dubai, Business Bay</div>
+        <div><a href="tel:+971547563668">+971 54 756 3668</a></div>
+        <div><a href="mailto:info@meridian.estate">info@meridian.estate</a></div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Properties</h4>
+      <ul>
+        <li><a href="#">Residential properties</a></li>
+        <li><a href="#">Commercial</a></li>
+        <li><a href="#">Investment projects</a></li>
+        <li><a href="#">Ready properties</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Partners</a></li>
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Citizenship & Residence</h4>
+      <ul>
+        <li><a href="#">Residence programs</a></li>
+        <li><a href="#">Citizenship by investment</a></li>
+        <li><a href="#">UAE Golden Visa</a></li>
+        <li><a href="#">Greek program</a></li>
+        <li><a href="#">Portugal residence permit</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Moonhouse Investments Limited. All rights reserved.</span>
+    <span><a href="#" style="color:rgba(255,255,255,0.25);text-decoration:none;">Privacy Policy</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
