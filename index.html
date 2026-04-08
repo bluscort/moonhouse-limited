@@ -4,8 +4,121 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moonhouse Investments — International Real Estate</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* ── HERO COLLAGE FULL BG (index only) ── */
+  .hero {
+    padding: 0 !important;
+    overflow: hidden;
+  }
+  .hero-collage {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 2px;
+    z-index: 0;
+  }
+  .collage-item {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: flex 0.5s ease;
+  }
+  .collage-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(8,14,23,0.22);
+    transition: background 0.4s;
+  }
+  .hero:hover .collage-item::after       { background: rgba(8,14,23,0.30); }
+  .hero .collage-item:hover::after       { background: rgba(8,14,23,0.10); }
+  .collage-tag {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  /* keep the dark gradient + content on top */
+  .hero-overlay {
+    background: linear-gradient(to right,
+      rgba(8,14,23,0.62) 0%,
+      rgba(8,14,23,0.30) 50%,
+      rgba(8,14,23,0.05) 100%) !important;
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px;
+    max-width: 700px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* ── PROPERTIES FILTER BAR ── */
+  .props-filter {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 24px 28px;
+    margin-bottom: 44px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 16px;
+    align-items: end;
+  }
+  .props-filter-field label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .props-filter-field select {
+    width: 100%;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .props-filter-field select:focus { border-color: var(--gold); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-collage { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); }
+    .hero-content { padding: 0 24px; }
+    .props-filter { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 580px) {
+    .hero-collage { grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr; }
+    .collage-tag { display: none; }
+    .props-filter { grid-template-columns: 1fr; }
+    .hero-actions { flex-direction: column; }
+    .hero-actions a, .hero-actions button { width: 100%; text-align: center; }
+  }
+</style>
 </head>
 <body>
 
@@ -36,46 +149,35 @@
 <div class="nav-overlay" id="navOverlay"></div>
 
 <!-- HERO -->
-<div class="hero" style="padding-top:72px;">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-tag">International real estate agency</p>
-    <h1>Real estate for <em>living</em> and investment abroad</h1>
-    <p>Over 500 properties in 20+ countries. Selection, legal support, asset management.</p>
-  </div>
-  <div class="search-box" style="margin-top:36px;">
-    <div class="search-row">
-      <div class="search-field">
-        <label>Country</label>
-        <select>
-          <option>Not selected</option>
-          <option>UAE</option><option>Thailand</option><option>Turkey</option>
-          <option>Indonesia</option><option>Portugal</option><option>Greece</option>
-          <option>Malaysia</option><option>Qatar</option><option>Oman</option>
-          <option>Saudi Arabia</option><option>UK</option><option>USA</option>
-        </select>
-      </div>
-      <div class="search-field">
-        <label>Type</label>
-        <select>
-          <option>Not selected</option>
-          <option>Apartments</option><option>Villa</option><option>Penthouse</option>
-          <option>Townhouse</option><option>Studio</option><option>Commercial</option>
-        </select>
-      </div>
-      <div class="search-field">
-        <label>Budget, $</label>
-        <select>
-          <option>Not selected</option>
-          <option>up to 100 000</option><option>100 000 – 300 000</option>
-          <option>300 000 – 700 000</option><option>700 000 – 2 000 000</option>
-          <option>from 2 000 000</option>
-        </select>
-      </div>
-      <button class="btn-gold">Find</button>
+<div class="hero" style="padding-top:64px;">
+
+  <!-- 4 vertical photo strips — glass skyscrapers from below -->
+  <div class="hero-collage">
+    <div class="collage-item" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=85');background-position:center top;">
+      <span class="collage-tag">Residential</span>
+    </div>
+    <div class="collage-item" style="background-image:url('https://images.unsplash.com/photo-1464817739973-0128fe77aaa1?w=900&q=85');background-position:center center;">
+      <span class="collage-tag">Commercial</span>
+    </div>
+    <div class="collage-item" style="background-image:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=85');background-position:center center;">
+      <span class="collage-tag">Investment</span>
+    </div>
+    <div class="collage-item" style="background-image:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&q=85');background-position:center top;">
+      <span class="collage-tag">Citizenship</span>
     </div>
   </div>
+
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-tag">International real estate</p>
+    <h1>Real estate for <em>living</em> and investment abroad</h1>
+    <p>Over 500 properties in 20+ countries. Expert selection, legal support, asset management.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-gold">Get consultation</a>
+      <a href="#properties" class="btn-outline" style="color:rgba(255,255,255,0.8);border-color:rgba(255,255,255,0.3);">View properties</a>
+    </div>
+  </div>
+
 </div>
 
 <!-- TOP OFFERS -->
@@ -83,6 +185,39 @@
   <p class="section-label">Best deals</p>
   <h2 class="section-title">Top offers</h2>
   <div class="divider"></div>
+
+  <!-- Filter bar -->
+  <div class="props-filter">
+    <div class="props-filter-field">
+      <label>Country</label>
+      <select>
+        <option>Not selected</option>
+        <option>UAE</option><option>Thailand</option><option>Turkey</option>
+        <option>Indonesia</option><option>Portugal</option><option>Greece</option>
+        <option>Malaysia</option><option>Qatar</option><option>Oman</option>
+        <option>Saudi Arabia</option><option>UK</option><option>USA</option>
+      </select>
+    </div>
+    <div class="props-filter-field">
+      <label>Type</label>
+      <select>
+        <option>Not selected</option>
+        <option>Apartments</option><option>Villa</option><option>Penthouse</option>
+        <option>Townhouse</option><option>Studio</option><option>Commercial</option>
+      </select>
+    </div>
+    <div class="props-filter-field">
+      <label>Budget, $</label>
+      <select>
+        <option>Not selected</option>
+        <option>up to 100 000</option><option>100 000 – 300 000</option>
+        <option>300 000 – 700 000</option><option>700 000 – 2 000 000</option>
+        <option>from 2 000 000</option>
+      </select>
+    </div>
+    <button class="btn-gold" style="white-space:nowrap;">Find</button>
+  </div>
+
   <div class="props-grid">
 
     <div class="prop-card">
