@@ -659,15 +659,11 @@
 // ── Scroll-reveal nav (homepage only) ─────────────────
 (function() {
   var nav = document.querySelector('nav');
-  // Start hidden on desktop
-  if (window.innerWidth > 900) nav.classList.add('nav-hidden');
+  // Start hidden on all screen sizes
+  nav.classList.add('nav-hidden');
 
   function update() {
-    if (window.innerWidth <= 900) {
-      nav.classList.remove('nav-hidden');
-      return;
-    }
-    var threshold = window.innerHeight * 0.35;
+    var threshold = window.innerHeight * 0.3;
     if (window.scrollY > threshold) {
       nav.classList.remove('nav-hidden');
     } else {
@@ -676,13 +672,6 @@
   }
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
-  // Show nav when hamburger opens (edge case)
-  var hamburger = document.getElementById('hamburger');
-  if (hamburger) {
-    hamburger.addEventListener('click', function() {
-      nav.classList.remove('nav-hidden');
-    });
-  }
 })();
 
 // ── Make prop-cards clickable ──────────────────────────

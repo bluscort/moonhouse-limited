@@ -11,6 +11,17 @@
   #offices-map { width: 100%; height: 480px; border: 1px solid var(--border); }
   @media (max-width: 580px) { #offices-map { height: 300px; } }
 </style>
+<style>
+  @media (max-width: 900px) {
+    section[style*="padding"] { padding: 48px 20px !important; }
+    .section-title { font-size: 26px; }
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+  }
+  @media (max-width: 480px) {
+    section[style*="padding"] { padding: 36px 16px !important; }
+    div[style*="grid-template-columns:1fr 1fr"] { gap: 24px !important; }
+  }
+</style>
 </head>
 <body>
 

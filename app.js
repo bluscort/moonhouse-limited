@@ -24,17 +24,24 @@ function closeMenu() {
   document.body.style.overflow = '';
 }
 
-// Close menu on nav link click
+// Close menu on nav link click (but not on dropdown parent links)
 document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', closeMenu);
+  a.addEventListener('click', function() {
+    if (this.parentElement.classList.contains('has-dropdown')) return;
+    closeMenu();
+  });
 });
 
 // ─── Mobile dropdown accordion ────────────────────────
 document.querySelectorAll('.has-dropdown > a').forEach(a => {
   a.addEventListener('click', function(e) {
-    if (window.innerWidth <= 900) {
+    if (window.innerWidth <= 1100) {
       e.preventDefault();
       const li = this.parentElement;
+      // Close other open dropdowns
+      document.querySelectorAll('.has-dropdown.expanded').forEach(other => {
+        if (other !== li) other.classList.remove('expanded');
+      });
       li.classList.toggle('expanded');
     }
   });
