@@ -10,12 +10,13 @@
 <body>
 
 <nav>
-  <a href="index.html" class="logo">Moonhouse Investments</a>
+  <a href="index.html" class="logo"><img src="moonhouse-logo.svg" alt="Moonhouse Investments"></a>
   <ul class="nav-links">
     <li class="has-dropdown"><a href="#">Projects ▾</a>
       <ul class="dropdown">
         <li><a href="commercial.html">Commercial</a></li>
         <li><a href="residential.html">Residential</a></li>
+        <li><a href="top-offers.html">Top Offers</a></li>
       </ul>
     </li>
     <li><a href="investments.html">Investments</a></li>
@@ -381,21 +382,29 @@
 
 <!-- NEWSLETTER -->
 <section class="newsletter-section">
-  <div>
-    <p class="newsletter-label-small">Stay informed</p>
-    <h2 class="newsletter-title">Subscribe to our newsletter</h2>
-    <p class="newsletter-sub">Get the latest investment opportunities, market insights and exclusive deals — straight to your inbox.</p>
+  <div class="newsletter-left">
+    <div>
+      <p class="newsletter-label-small">Stay informed</p>
+      <h2 class="newsletter-title">Subscribe to our newsletter</h2>
+      <p class="newsletter-sub">Get the latest investment opportunities, market insights and exclusive deals — straight to your inbox.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" class="newsletter-input" placeholder="Your email address">
+      <button type="submit" class="btn-gold">Subscribe</button>
+    </form>
   </div>
-  <form class="newsletter-form" onsubmit="return false;">
-    <input type="email" class="newsletter-input" placeholder="Your email address">
-    <button type="submit" class="btn-gold">Subscribe</button>
-  </form>
+  <div class="footer-map-box">
+    <p class="newsletter-label-small">Our office</p>
+    <p class="map-address">UAE, Abu Dhabi, Dar Al Salam Building, Liwa St. Office 221</p>
+    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=54.352%2C24.474%2C54.372%2C24.494&layer=mapnik&marker=24.484%2C54.362" frameborder="0" scrolling="no" title="Office location"></iframe>
+    <a href="https://www.openstreetmap.org/?mlat=24.484&mlon=54.362#map=16/24.484/54.362" target="_blank" rel="noopener" class="map-link">Open in maps →</a>
+  </div>
 </section>
 
 <footer>
   <div class="footer-grid">
     <div>
-      <a href="index.html" class="footer-logo">Moonhouse Investments</a>
+      <a href="index.html" class="footer-logo"><img src="moonhouse-logo.svg" alt="Moonhouse Investments"></a>
       <p class="footer-about">International real estate agency. Offices in Almaty, Astana, Tashkent, Dubai and Abu Dhabi. Founded 1998.</p>
       <div class="footer-contact">
         <div>UAE, Abu Dhabi, Dar Al Salam Building, Liwa St. Office 221</div>

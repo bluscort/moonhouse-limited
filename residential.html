@@ -6,16 +6,35 @@
 <title>Residential Projects — Moonhouse Investments</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+/* ── Responsive overrides for inline-styled sections ── */
+#res-filter-section { padding: 40px 80px; background: var(--white); }
+@media (max-width: 900px) {
+  #res-filter-section { padding: 28px 20px !important; }
+}
+@media (max-width: 480px) {
+  #res-filter-section { padding: 20px 16px !important; }
+}
+/* Make each country section's padding responsive */
+section.country-section { padding: 64px 80px; }
+@media (max-width: 900px) {
+  section.country-section { padding: 48px 20px; }
+}
+@media (max-width: 480px) {
+  section.country-section { padding: 36px 16px; }
+}
+</style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="logo">Moonhouse Investments</a>
+  <a href="index.html" class="logo"><img src="moonhouse-logo.svg" alt="Moonhouse Investments"></a>
   <ul class="nav-links">
     <li class="has-dropdown"><a href="#" class="active">Projects ▾</a>
       <ul class="dropdown">
         <li><a href="commercial.html">Commercial</a></li>
         <li><a href="residential.html" class="active">Residential</a></li>
+        <li><a href="top-offers.html">Top Offers</a></li>
       </ul>
     </li>
     <li><a href="investments.html">Investments</a></li>
@@ -58,15 +77,20 @@
 </div>
 
 <!-- FILTER -->
-<section style="background:var(--white); padding:40px 80px;">
-  <div class="search-row" style="background:var(--cream);border:1px solid var(--border);border-radius:4px;padding:20px 24px;grid-template-columns:1fr 1fr 1fr 1fr auto;">
+<section id="res-filter-section">
+  <div class="search-row" style="background:var(--cream);border:1px solid var(--border);border-radius:4px;padding:20px 24px;">
     <div class="search-field">
       <label style="color:var(--gold)">Country</label>
-      <select style="background:var(--white);border:1px solid var(--border);color:var(--text);">
-        <option>All countries</option>
-        <option>UAE</option><option>Thailand</option><option>Indonesia</option>
-        <option>Turkey</option><option>UK</option><option>Greece</option>
-        <option>Portugal</option><option>Malaysia</option><option>Qatar</option>
+      <select id="country-filter" style="background:var(--white);border:1px solid var(--border);color:var(--text);">
+        <option value="">All countries</option>
+        <option value="UAE">UAE</option>
+        <option value="Thailand">Thailand</option>
+        <option value="Indonesia">Indonesia</option>
+        <option value="Europe">Europe &amp; UK</option>
+        <option value="Turkey">Turkey</option>
+        <option value="Greece">Greece</option>
+        <option value="Portugal">Portugal</option>
+        <option value="Malaysia">Malaysia</option>
       </select>
     </div>
     <div class="search-field">
@@ -96,7 +120,7 @@
 </section>
 
 <!-- UAE PROPERTIES -->
-<section class="properties" style="padding:64px 80px 40px;">
+<section class="properties country-section" data-country="UAE">
   <p class="section-label">UAE</p>
   <h2 class="section-title" style="font-size:32px;margin-bottom:32px;">United Arab Emirates</h2>
   <div class="props-grid">
@@ -183,7 +207,7 @@
 </section>
 
 <!-- THAILAND PROPERTIES -->
-<section style="background:var(--cream); padding:40px 80px;">
+<section class="country-section" data-country="Thailand" style="background:var(--cream);">
   <p class="section-label">Thailand</p>
   <h2 class="section-title" style="font-size:32px;margin-bottom:32px;">Thailand</h2>
   <div class="props-grid">
@@ -231,7 +255,7 @@
 </section>
 
 <!-- INDONESIA PROPERTIES -->
-<section class="properties" style="padding:40px 80px;">
+<section class="properties country-section" data-country="Indonesia">
   <p class="section-label">Indonesia</p>
   <h2 class="section-title" style="font-size:32px;margin-bottom:32px;">Bali, Indonesia</h2>
   <div class="props-grid">
@@ -279,7 +303,7 @@
 </section>
 
 <!-- UK & EUROPE PROPERTIES -->
-<section style="background:var(--cream); padding:40px 80px 96px;">
+<section class="country-section" data-country="Europe" style="background:var(--cream);">
   <p class="section-label">Europe &amp; UK</p>
   <h2 class="section-title" style="font-size:32px;margin-bottom:32px;">Europe &amp; United Kingdom</h2>
   <div class="props-grid">
@@ -329,21 +353,29 @@
 
 <!-- NEWSLETTER -->
 <section class="newsletter-section">
-  <div>
-    <p class="newsletter-label-small">Stay informed</p>
-    <h2 class="newsletter-title">Subscribe to our newsletter</h2>
-    <p class="newsletter-sub">Get the latest investment opportunities, market insights and exclusive deals — straight to your inbox.</p>
+  <div class="newsletter-left">
+    <div>
+      <p class="newsletter-label-small">Stay informed</p>
+      <h2 class="newsletter-title">Subscribe to our newsletter</h2>
+      <p class="newsletter-sub">Get the latest investment opportunities, market insights and exclusive deals — straight to your inbox.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" class="newsletter-input" placeholder="Your email address">
+      <button type="submit" class="btn-gold">Subscribe</button>
+    </form>
   </div>
-  <form class="newsletter-form" onsubmit="return false;">
-    <input type="email" class="newsletter-input" placeholder="Your email address">
-    <button type="submit" class="btn-gold">Subscribe</button>
-  </form>
+  <div class="footer-map-box">
+    <p class="newsletter-label-small">Our office</p>
+    <p class="map-address">UAE, Abu Dhabi, Dar Al Salam Building, Liwa St. Office 221</p>
+    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=54.352%2C24.474%2C54.372%2C24.494&layer=mapnik&marker=24.484%2C54.362" frameborder="0" scrolling="no" title="Office location"></iframe>
+    <a href="https://www.openstreetmap.org/?mlat=24.484&mlon=54.362#map=16/24.484/54.362" target="_blank" rel="noopener" class="map-link">Open in maps →</a>
+  </div>
 </section>
 
 <footer>
   <div class="footer-grid">
     <div>
-      <a href="index.html" class="footer-logo">Moonhouse Investments</a>
+      <a href="index.html" class="footer-logo"><img src="moonhouse-logo.svg" alt="Moonhouse Investments"></a>
       <p class="footer-about">International real estate agency. Offices in Almaty, Astana, Tashkent, Dubai and Abu Dhabi. Founded 1998.</p>
       <div class="footer-contact">
         <div>UAE, Abu Dhabi, Dar Al Salam Building, Liwa St. Office 221</div>
@@ -384,5 +416,83 @@
 </footer>
 
 <script src="app.js"></script>
+<script>
+(function() {
+  var select = document.getElementById('country-filter');
+  var sections = document.querySelectorAll('section[data-country]');
+  var applyBtn = document.querySelector('.search-row .btn-gold');
+
+  function applyFilter() {
+    var val = select ? select.value : '';
+    sections.forEach(function(sec) {
+      if (!val) {
+        sec.style.display = '';
+      } else {
+        sec.style.display = sec.getAttribute('data-country') === val ? '' : 'none';
+      }
+    });
+    // Update page hero subtitle
+    var heroSub = document.querySelector('.page-hero-content p');
+    if (heroSub && val) {
+      heroSub.textContent = 'Showing properties in ' + val + '. Use the filter below to explore other countries.';
+    }
+  }
+
+  // Read URL param on load
+  var params = new URLSearchParams(window.location.search);
+  var urlCountry = params.get('country');
+  if (urlCountry && select) {
+    // Map some URL values to option values
+    var map = { 'UK': 'Europe', 'Greece': 'Europe', 'Portugal': 'Europe' };
+    var mapped = map[urlCountry] || urlCountry;
+    select.value = mapped;
+    applyFilter();
+    // Smooth scroll to first visible section
+    setTimeout(function() {
+      var first = document.querySelector('section[data-country]:not([style*="none"])');
+      if (first) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 300);
+  }
+
+  if (applyBtn) {
+    applyBtn.addEventListener('click', applyFilter);
+  }
+  if (select) {
+    select.addEventListener('change', applyFilter);
+  }
+})();
+</script>
+<script>
+// ── Make prop-cards clickable ──────────────────────────
+(function() {
+  var NAME_TO_ID = {
+    'Aldar Haven Verdes': 'aldar-haven-verdes',
+    'The Source (SRC)': 'the-source',
+    'Gardenia Bay (GBY)': 'gardenia-bay',
+    'Yas Golf Collection (YGC)': 'yas-golf-collection',
+    'Bay Views (BVS)': 'bay-views',
+    'Manarat Living': 'manarat-living',
+    'Cassia Rama 9': 'cassia-rama-9',
+    'Sunny Moon (SMN)': 'sunny-moon',
+    'Laguna Lakelands (LLR)': 'laguna-lakelands',
+    'Sunny Ocean Berawa (SBW)': 'sunny-ocean-berawa',
+    'Sunny Ocean (SOP)': 'sunny-ocean',
+    'Sunny Apart (SPT)': 'sunny-apart',
+    '250 City Road': '250-city-road',
+    'Aegean Heights': 'aegean-heights',
+    'Quinta da Luz': 'quinta-da-luz'
+  };
+  document.querySelectorAll('.prop-card').forEach(function(card) {
+    var nameEl = card.querySelector('.prop-name');
+    if (!nameEl) return;
+    var id = NAME_TO_ID[nameEl.textContent.trim()];
+    if (!id) return;
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function() {
+      window.location.href = 'property.html?id=' + id;
+    });
+  });
+})();
+</script>
 </body>
 </html>
