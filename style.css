@@ -853,6 +853,13 @@ section { padding: 96px 80px; }
   color: var(--muted);
 }
 .office-detail:last-child { border-bottom: none; }
+.office-detail > span:last-child {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.office-detail a { word-break: break-all; }
 .office-detail-label {
   font-size: 10px;
   color: var(--gold);
@@ -860,6 +867,7 @@ section { padding: 96px 80px; }
   text-transform: uppercase;
   min-width: 64px;
   padding-top: 2px;
+  flex-shrink: 0;
 }
 
 /* ─── CONSULTATION FORM ───────────────────────────── */
@@ -949,12 +957,46 @@ section { padding: 96px 80px; }
 
 .partners-track {
   display: flex;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
   overflow: hidden;
   padding: 20px 0;
-  mask: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
+.partner-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 22px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  text-decoration: none;
+}
+.partner-logo:hover {
+  border-color: var(--gold);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+.partner-mark {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+.partner-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--text);
+  transition: color 0.2s;
+}
+.partner-logo:hover .partner-text { color: var(--dark); }
 .partner-name {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
@@ -1363,7 +1405,10 @@ footer {
   .footer-logo img { height: 52px; }
 
   /* Partners track — no mask on mobile */
-  .partners-track { mask: none; flex-wrap: wrap; gap: 16px 32px; }
+  .partners-track { mask: none; -webkit-mask: none; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .partner-logo { padding: 12px 16px; gap: 8px; }
+  .partner-mark { width: 22px; height: 22px; }
+  .partner-text { font-size: 11px; letter-spacing: 1.2px; }
 
   /* Country cards */
   .country-card { height: 100px; }
@@ -1635,3 +1680,38 @@ a.country-link:hover .country-card { box-shadow: 0 0 0 2px var(--gold); }
 }
 @media (max-width: 900px) { .certs-section { padding: 48px 24px; } }
 @media (max-width: 480px) { .certs-section { padding: 40px 16px; } }
+
+/* ─── TOAST / CONFIRM ─────────────────────────────── */
+.mh-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  background: var(--dark, #0e0e10);
+  color: #fff;
+  padding: 18px 28px;
+  border: 1px solid var(--gold, #b8955a);
+  border-radius: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  z-index: 9999;
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  max-width: 90vw;
+  text-align: center;
+}
+.mh-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.mh-toast .mh-toast-title {
+  color: var(--gold, #b8955a);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 11px;
+  margin-bottom: 6px;
+  display: block;
+}

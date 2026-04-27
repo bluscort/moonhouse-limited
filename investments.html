@@ -21,8 +21,9 @@
 <nav>
   <a href="index.html" class="logo"><img src="moonhouse-logo.svg" alt="Moonhouse Investments"></a>
   <ul class="nav-links">
-    <li class="has-dropdown"><a href="#">Projects ▾</a>
+    <li class="has-dropdown"><a href="projects.html">Projects ▾</a>
       <ul class="dropdown">
+        <li><a href="projects.html">All Projects</a></li>
         <li><a href="commercial.html">Commercial</a></li>
         <li><a href="residential.html">Residential</a></li>
         <li><a href="top-offers.html">Top Offers</a></li>
@@ -413,5 +414,55 @@
 </footer>
 
 <script src="app.js"></script>
+<script>
+// ── Make invest-cards clickable ──────────────────────────
+(function() {
+  var NAME_TO_ID = {
+    'Aldar Haven Verdes': 'aldar-haven-verdes',
+    'The Source': 'the-source',
+    'The Source (SRC)': 'the-source',
+    'Gardenia Bay': 'gardenia-bay',
+    'Gardenia Bay (GBY)': 'gardenia-bay',
+    'Yas Golf Collection': 'yas-golf-collection',
+    'YGC — Yas Golf Collection': 'yas-golf-collection',
+    'Yas Golf Collection (YGC)': 'yas-golf-collection',
+    'Bay Views': 'bay-views',
+    'Bay Views (BVS)': 'bay-views',
+    'Manarat Living': 'manarat-living',
+    'Aldar Athlon': 'aldar-athlon',
+    'Cassia Rama 9': 'cassia-rama-9',
+    'Sunny Moon': 'sunny-moon',
+    'Sunny Moon (SMN)': 'sunny-moon',
+    'Laguna Lakelands': 'laguna-lakelands',
+    'Laguna Lakelands (LLR)': 'laguna-lakelands',
+    'Sunny Ocean Berawa': 'sunny-ocean-berawa',
+    'Sunny Ocean Berawa (SBW)': 'sunny-ocean-berawa',
+    'Sunny Ocean': 'sunny-ocean',
+    'Sunny Ocean (SOP)': 'sunny-ocean',
+    'Sunny Apart': 'sunny-apart',
+    'Sunny Apart (SPT)': 'sunny-apart',
+    'SAP2 — Sunny Apart 2': 'sunny-apart',
+    '250 City Road': '250-city-road',
+    'Aegean Heights': 'aegean-heights',
+    'Quinta da Luz': 'quinta-da-luz',
+    'Tropicana Cenang': 'tropicana-cenang',
+    'Tropicana Cenang (CNG)': 'tropicana-cenang',
+    'Skala Villa': 'skala-villa',
+    'Skala Villa (SKV)': 'skala-villa'
+  };
+  document.querySelectorAll('.invest-card, .featured-invest-card, .prop-card').forEach(function(card) {
+    var nameEl = card.querySelector('.invest-name, .prop-name');
+    if (!nameEl) return;
+    var id = NAME_TO_ID[nameEl.textContent.trim()];
+    if (!id) return;
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function(e) {
+      // Don't navigate when clicking on inner buttons/links
+      if (e.target.closest('button, a')) return;
+      window.location.href = 'property.html?id=' + id;
+    });
+  });
+})();
+</script>
 </body>
 </html>

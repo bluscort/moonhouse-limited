@@ -197,6 +197,9 @@
   overflow: hidden;
   transition: box-shadow 0.2s, transform 0.2s;
   cursor: pointer;
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 .to-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.10); transform: translateY(-2px); }
 .to-card-img {
@@ -328,8 +331,9 @@
 <nav>
   <a href="index.html" class="logo"><img src="moonhouse-logo.svg" alt="Moonhouse Investments"></a>
   <ul class="nav-links">
-    <li class="has-dropdown"><a href="#" class="active">Projects ▾</a>
+    <li class="has-dropdown"><a href="projects.html" class="active">Projects ▾</a>
       <ul class="dropdown">
+        <li><a href="projects.html">All Projects</a></li>
         <li><a href="commercial.html">Commercial</a></li>
         <li><a href="residential.html">Residential</a></li>
         <li><a href="top-offers.html" class="active">Top Offers</a></li>
@@ -603,7 +607,7 @@ function render() {
     var statusText = o.status === 'completed' ? 'Completed' : 'Under construction';
     var url = 'property.html?id=' + o.id;
     return [
-      '<div class="to-card" onclick="window.location.href=\'' + url + '\'" role="link" tabindex="0">',
+      '<a class="to-card" href="' + url + '" role="link">',
         '<div class="to-card-img" style="background-image:url(\'' + o.img + '\')">',
           '<div class="to-card-badges">' + badgesHtml + '</div>',
         '</div>',
@@ -616,9 +620,9 @@ function render() {
             '<span><span class="status-dot ' + statusDot + '"></span>' + statusText + '</span>',
             '<span>' + o.completion + '</span>',
           '</div>',
-          '<a href="' + url + '" class="to-card-cta" onclick="event.stopPropagation()">View property →</a>',
+          '<span class="to-card-cta">View property →</span>',
         '</div>',
-      '</div>'
+      '</a>'
     ].join('');
   }).join('');
 }
