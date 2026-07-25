@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Residential Projects — Moonhouse Investments</title>
+<title>Stambeni projekti — Moonhouse Investments</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
@@ -28,29 +28,29 @@ section.country-section { padding: 64px 80px; }
 <body>
 
 <nav>
-  <a href="index.html" class="logo"><img src="moonhouse-logo.svg" alt="Moonhouse Investments"></a>
+  <a href="index-sr.html" class="logo"><img src="moonhouse-logo.svg" alt="Moonhouse Investments"></a>
   <ul class="nav-links">
-    <li class="has-dropdown"><a href="#" class="active">Projects ▾</a>
+    <li class="has-dropdown"><a href="#" class="active">Projekti ▾</a>
       <ul class="dropdown">
-        <li><a href="commercial.html">Commercial</a></li>
-        <li><a href="residential.html" class="active">Residential</a></li>
-        <li><a href="top-offers.html">Top Offers</a></li>
+        <li><a href="commercial-sr.html">Komercijalne nekretnine</a></li>
+        <li><a href="residential-sr.html" class="active">Stambeno</a></li>
+        <li><a href="top-offers-sr.html">Top ponude</a></li>
       </ul>
     </li>
-    <li><a href="investments.html">Investments</a></li>
-    <li><a href="citizenship.html">Citizenship &amp; Residence</a></li>
-    <li class="has-dropdown"><a href="about.html">About Us ▾</a>
+    <li><a href="investments-sr.html">Investicije</a></li>
+    <li><a href="citizenship-sr.html">Državljanstvo i boravak</a></li>
+    <li class="has-dropdown"><a href="about-sr.html">O nama ▾</a>
       <ul class="dropdown">
-        <li><a href="about.html">About Company</a></li>
-        <li><a href="about.html#team">Team</a></li>
-        <li><a href="about.html#partners">Partners</a></li>
-        <li><a href="about.html#reviews">Reviews</a></li>
+        <li><a href="about-sr.html">O kompaniji</a></li>
+        <li><a href="about-sr.html#team">Tim</a></li>
+        <li><a href="about-sr.html#partners">Partneri</a></li>
+        <li><a href="about-sr.html#reviews">Recenzije</a></li>
       </ul>
     </li>
-    <li><a href="contacts.html">Contacts</a></li>
-    <li class="lang-switch-item"><a href="residential-sr.html">SR</a></li>
+    <li><a href="contacts-sr.html">Kontakt</a></li>
+    <li class="lang-switch-item"><a href="residential.html">EN</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburger" aria-label="Otvori meni"><span></span><span></span><span></span></button>
   <a href="tel:+381601234567" class="nav-phone">+381 60 123 4567</a>
 </nav>
 <div class="nav-overlay" id="navOverlay"></div>
@@ -64,140 +64,140 @@ section.country-section { padding: 64px 80px; }
 <div class="page-hero">
   <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80')"></div>
   <div class="page-hero-content">
-    <p class="hero-tag">Residential real estate</p>
-    <h1>Properties for <em>living</em> &amp; investment abroad</h1>
-    <p>Browse our curated selection of residential properties across 20+ countries — from Bali villas to London apartments.</p>
+    <p class="hero-tag">Stambene nekretnine</p>
+    <h1>Nekretnine za <em>život</em> i investiranje u inostranstvu</h1>
+    <p>Pregledajte našu pažljivo odabranu ponudu stambenih nekretnina u više od 20 zemalja — od vila na Baliju do stanova u Londonu.</p>
   </div>
 </div>
 
 <div class="breadcrumb">
-  <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="#">Projects</a> &nbsp;/&nbsp; <span>Residential</span>
+  <a href="index-sr.html">Početna</a> &nbsp;/&nbsp; <a href="#">Projekti</a> &nbsp;/&nbsp; <span>Stambeno</span>
 </div>
 
 <!-- FILTER -->
 <section id="res-filter-section">
   <div class="search-row" style="background:var(--cream);border:1px solid var(--border);border-radius:4px;padding:20px 24px;">
     <div class="search-field">
-      <label style="color:var(--gold)">Country</label>
+      <label style="color:var(--gold)">Zemlja</label>
       <select id="country-filter" style="background:var(--white);border:1px solid var(--border);color:var(--text);">
-        <option value="">All countries</option>
+        <option value="">Sve zemlje</option>
         <option value="UAE">UAE</option>
-        <option value="Thailand">Thailand</option>
-        <option value="Indonesia">Indonesia</option>
-        <option value="Europe">Europe &amp; UK</option>
-        <option value="Turkey">Turkey</option>
-        <option value="Greece">Greece</option>
-        <option value="Portugal">Portugal</option>
-        <option value="Malaysia">Malaysia</option>
+        <option value="Thailand">Tajland</option>
+        <option value="Indonesia">Indonezija</option>
+        <option value="Europe">Evropa i Velika Britanija</option>
+        <option value="Turkey">Turska</option>
+        <option value="Greece">Grčka</option>
+        <option value="Portugal">Portugalija</option>
+        <option value="Malaysia">Malezija</option>
       </select>
     </div>
     <div class="search-field">
-      <label style="color:var(--gold)">Type</label>
+      <label style="color:var(--gold)">Tip</label>
       <select style="background:var(--white);border:1px solid var(--border);color:var(--text);">
-        <option>All types</option>
-        <option>Apartment</option><option>Villa</option><option>Penthouse</option>
-        <option>Townhouse</option><option>Studio</option>
+        <option>Svi tipovi</option>
+        <option>Apartman</option><option>Vila</option><option>Penthaus</option>
+        <option>Taunhaus</option><option>Studio</option>
       </select>
     </div>
     <div class="search-field">
-      <label style="color:var(--gold)">Budget, $</label>
+      <label style="color:var(--gold)">Budžet, $</label>
       <select style="background:var(--white);border:1px solid var(--border);color:var(--text);">
-        <option>Any budget</option>
-        <option>up to 150 000</option><option>150 000 – 400 000</option>
-        <option>400 000 – 1 000 000</option><option>from 1 000 000</option>
+        <option>Bilo koji budžet</option>
+        <option>do 150 000</option><option>150 000 – 400 000</option>
+        <option>400 000 – 1 000 000</option><option>od 1 000 000</option>
       </select>
     </div>
     <div class="search-field">
       <label style="color:var(--gold)">Status</label>
       <select style="background:var(--white);border:1px solid var(--border);color:var(--text);">
-        <option>Any status</option><option>Under construction</option><option>Completed</option>
+        <option>Bilo koji status</option><option>U izgradnji</option><option>Završeno</option>
       </select>
     </div>
-    <button class="btn-gold">Apply</button>
+    <button class="btn-gold">Primeni</button>
   </div>
 </section>
 
 <!-- UAE PROPERTIES -->
 <section class="properties country-section" data-country="UAE">
   <p class="section-label">UAE</p>
-  <h2 class="section-title" style="font-size:32px;margin-bottom:32px;">United Arab Emirates</h2>
+  <h2 class="section-title" style="font-size:32px;margin-bottom:32px;">Ujedinjeni Arapski Emirati</h2>
   <div class="props-grid">
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-hot">Hot offer</span><span class="badge badge-top">Top offer</span></div>
+        <div class="prop-badges"><span class="badge badge-hot">Vruća ponuda</span><span class="badge badge-top">Top ponuda</span></div>
       </div>
       <div class="prop-body">
         <p class="prop-location">UAE, Dubai, Dubailand</p>
         <p class="prop-name">Aldar Haven Verdes</p>
         <p class="prop-price">$269,500 – $762,300 USD</p>
-        <p class="prop-desc">By Aldar Properties. Large green community with cafes, wellness centers, pools, kindergarten and school.</p>
-        <div class="prop-footer"><span><span class="status-dot status-build"></span>Under construction</span><span>Q3 2027</span></div>
+        <p class="prop-desc">Kompanija Aldar Properties. Veliko zeleno naselje sa kafeima, wellness centrima, bazenima, vrtićem i školom.</p>
+        <div class="prop-footer"><span><span class="status-dot status-build"></span>U izgradnji</span><span>Q3 2027</span></div>
       </div>
     </div>
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-top">Top offer</span><span class="badge badge-invest">Investments</span></div>
+        <div class="prop-badges"><span class="badge badge-top">Top ponuda</span><span class="badge badge-invest">Investicije</span></div>
       </div>
       <div class="prop-body">
         <p class="prop-location">UAE, Abu Dhabi, Saadiyat Island</p>
         <p class="prop-name">The Source (SRC)</p>
         <p class="prop-price">$626,000 – $1.83M USD</p>
-        <p class="prop-desc">Near Zayed National Museum, Museum of Natural History and Abrahamic Family House.</p>
-        <div class="prop-footer"><span><span class="status-dot status-build"></span>Under construction</span><span>Q4 2026</span></div>
+        <p class="prop-desc">U blizini Zayed National Museum, Museum of Natural History i Abrahamic Family House.</p>
+        <div class="prop-footer"><span><span class="status-dot status-build"></span>U izgradnji</span><span>Q4 2026</span></div>
       </div>
     </div>
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-top">Top offer</span></div>
+        <div class="prop-badges"><span class="badge badge-top">Top ponuda</span></div>
       </div>
       <div class="prop-body">
         <p class="prop-location">UAE, Abu Dhabi, Yas Island</p>
         <p class="prop-name">Gardenia Bay (GBY)</p>
         <p class="prop-price">$220,000 – $844,813 USD</p>
-        <p class="prop-desc">Exclusive project on Yas Island. Arabian Gulf shores with premium amenities.</p>
-        <div class="prop-footer"><span><span class="status-dot status-build"></span>Under construction</span><span>Q2 2027</span></div>
+        <p class="prop-desc">Ekskluzivan projekat na Yas Island. Obala Arabijskog zaliva sa vrhunskim sadržajima.</p>
+        <div class="prop-footer"><span><span class="status-dot status-build"></span>U izgradnji</span><span>Q2 2027</span></div>
       </div>
     </div>
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-sea">Sea view</span><span class="badge badge-top">Top offer</span></div>
+        <div class="prop-badges"><span class="badge badge-sea">Pogled na more</span><span class="badge badge-top">Top ponuda</span></div>
       </div>
       <div class="prop-body">
         <p class="prop-location">UAE, Abu Dhabi, Yas Island</p>
         <p class="prop-name">Yas Golf Collection (YGC)</p>
         <p class="prop-price">$376,000 – $600,000 USD</p>
-        <p class="prop-desc">1,062 residential units overlooking Yas Links Golf Course, mangroves and Arabian Gulf.</p>
-        <div class="prop-footer"><span><span class="status-dot status-build"></span>Under construction</span><span>Q3 2025</span></div>
+        <p class="prop-desc">1.062 stambene jedinice sa pogledom na Yas Links Golf Course, mangrove i Arabijski zaliv.</p>
+        <div class="prop-footer"><span><span class="status-dot status-build"></span>U izgradnji</span><span>Q3 2025</span></div>
       </div>
     </div>
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-sea">Sea view</span></div>
+        <div class="prop-badges"><span class="badge badge-sea">Pogled na more</span></div>
       </div>
       <div class="prop-body">
         <p class="prop-location">UAE, Ras Al Khaimah, Mina Al Arab</p>
         <p class="prop-name">Bay Views (BVS)</p>
         <p class="prop-price">$144,300 – $381,000 USD</p>
-        <p class="prop-desc">Views of Arabian Gulf and Hajar Mountains. Part of Mina Al Arab master community.</p>
-        <div class="prop-footer"><span><span class="status-dot status-build"></span>Under construction</span><span>Q3 2025</span></div>
+        <p class="prop-desc">Pogled na Arabijski zaliv i planine Hajar. Deo master zajednice Mina Al Arab.</p>
+        <div class="prop-footer"><span><span class="status-dot status-build"></span>U izgradnji</span><span>Q3 2025</span></div>
       </div>
     </div>
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-hot">Hot offer</span></div>
+        <div class="prop-badges"><span class="badge badge-hot">Vruća ponuda</span></div>
       </div>
       <div class="prop-body">
         <p class="prop-location">UAE, Abu Dhabi, Saadiyat Island</p>
         <p class="prop-name">Manarat Living</p>
-        <p class="prop-price">from $286,000 USD</p>
-        <p class="prop-desc">Cultural District. 1–2 bedrooms, 30–148 m². Close to world-class museums and galleries.</p>
-        <div class="prop-footer"><span><span class="status-dot status-build"></span>Under construction</span><span>Q1 2026</span></div>
+        <p class="prop-price">od $286,000 USD</p>
+        <p class="prop-desc">Kulturni distrikt. 1–2 spavaće sobe, 30–148 m². Blizu muzeja i galerija svetske klase.</p>
+        <div class="prop-footer"><span><span class="status-dot status-build"></span>U izgradnji</span><span>Q1 2026</span></div>
       </div>
     </div>
 
@@ -206,46 +206,46 @@ section.country-section { padding: 64px 80px; }
 
 <!-- THAILAND PROPERTIES -->
 <section class="country-section" data-country="Thailand" style="background:var(--cream);">
-  <p class="section-label">Thailand</p>
-  <h2 class="section-title" style="font-size:32px;margin-bottom:32px;">Thailand</h2>
+  <p class="section-label">Tajland</p>
+  <h2 class="section-title" style="font-size:32px;margin-bottom:32px;">Tajland</h2>
   <div class="props-grid">
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-hot">Hot offer</span><span class="badge badge-top">Top offer</span></div>
+        <div class="prop-badges"><span class="badge badge-hot">Vruća ponuda</span><span class="badge badge-top">Top ponuda</span></div>
       </div>
       <div class="prop-body">
-        <p class="prop-location">Thailand, Bangkok</p>
+        <p class="prop-location">Tajland, Bangkok</p>
         <p class="prop-name">Cassia Rama 9</p>
         <p class="prop-price">$136,930 – $273,900 USD</p>
-        <p class="prop-desc">Bangkok project creates a new level of comfortable living with high-quality world-class services.</p>
-        <div class="prop-footer"><span><span class="status-dot status-done"></span>Completed</span><span>Q2 2024</span></div>
+        <p class="prop-desc">Projekat u Bangkoku donosi novi nivo udobnog života uz vrhunske usluge svetskog nivoa.</p>
+        <div class="prop-footer"><span><span class="status-dot status-done"></span>Završeno</span><span>Q2 2024</span></div>
       </div>
     </div>
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-sea">Sea view</span><span class="badge badge-top">Top offer</span></div>
+        <div class="prop-badges"><span class="badge badge-sea">Pogled na more</span><span class="badge badge-top">Top ponuda</span></div>
       </div>
       <div class="prop-body">
-        <p class="prop-location">Thailand, Phuket, Rawai</p>
+        <p class="prop-location">Tajland, Phuket, Rawai</p>
         <p class="prop-name">Sunny Moon (SMN)</p>
-        <p class="prop-price">from $121,300 USD</p>
-        <p class="prop-desc">2 blocks, 228 apartments, 8 floors. 750m from beach. Layouts 33–134 m².</p>
-        <div class="prop-footer"><span><span class="status-dot status-build"></span>Under construction</span><span>Q4 2025</span></div>
+        <p class="prop-price">od $121,300 USD</p>
+        <p class="prop-desc">2 bloka, 228 apartmana, 8 spratova. 750m od plaže. Rasporedi 33–134 m².</p>
+        <div class="prop-footer"><span><span class="status-dot status-build"></span>U izgradnji</span><span>Q4 2025</span></div>
       </div>
     </div>
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-top">Popular</span></div>
+        <div class="prop-badges"><span class="badge badge-top">Popularno</span></div>
       </div>
       <div class="prop-body">
-        <p class="prop-location">Thailand, Phuket, Laguna</p>
+        <p class="prop-location">Tajland, Phuket, Laguna</p>
         <p class="prop-name">Laguna Lakelands (LLR)</p>
         <p class="prop-price">$250,000 – $530,000 USD</p>
-        <p class="prop-desc">Low-rise development with lagoon views. Near Boat Avenue, Central Porto de Phuket.</p>
-        <div class="prop-footer"><span><span class="status-dot status-build"></span>Under construction</span><span>Q1 2025</span></div>
+        <p class="prop-desc">Niska gradnja sa pogledom na lagunu. U blizini Boat Avenue, Central Porto de Phuket.</p>
+        <div class="prop-footer"><span><span class="status-dot status-build"></span>U izgradnji</span><span>Q1 2025</span></div>
       </div>
     </div>
 
@@ -254,46 +254,46 @@ section.country-section { padding: 64px 80px; }
 
 <!-- INDONESIA PROPERTIES -->
 <section class="properties country-section" data-country="Indonesia">
-  <p class="section-label">Indonesia</p>
-  <h2 class="section-title" style="font-size:32px;margin-bottom:32px;">Bali, Indonesia</h2>
+  <p class="section-label">Indonezija</p>
+  <h2 class="section-title" style="font-size:32px;margin-bottom:32px;">Bali, Indonezija</h2>
   <div class="props-grid">
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-top">Top offer</span></div>
+        <div class="prop-badges"><span class="badge badge-top">Top ponuda</span></div>
       </div>
       <div class="prop-body">
-        <p class="prop-location">Indonesia, Bali, Canggu, Berawa</p>
+        <p class="prop-location">Indonezija, Bali, Canggu, Berawa</p>
         <p class="prop-name">Sunny Ocean Berawa (SBW)</p>
         <p class="prop-price">$250,000 – $500,000 USD</p>
-        <p class="prop-desc">30 modern villas, 3 minutes from Berawa Beach. Premium finishes throughout.</p>
-        <div class="prop-footer"><span><span class="status-dot status-done"></span>Completed</span><span>Q1 2024</span></div>
+        <p class="prop-desc">30 modernih vila, 3 minuta od plaže Berawa. Vrhunska završna obrada u celom objektu.</p>
+        <div class="prop-footer"><span><span class="status-dot status-done"></span>Završeno</span><span>Q1 2024</span></div>
       </div>
     </div>
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-sea">Sea view</span></div>
+        <div class="prop-badges"><span class="badge badge-sea">Pogled na more</span></div>
       </div>
       <div class="prop-body">
-        <p class="prop-location">Indonesia, Bali, Bukit</p>
+        <p class="prop-location">Indonezija, Bali, Bukit</p>
         <p class="prop-name">Sunny Ocean (SOP)</p>
         <p class="prop-price">$374,400 – $375,000 USD</p>
-        <p class="prop-desc">Sea view. 250m from Indian Ocean. Modern architecture with tropical landscaping.</p>
-        <div class="prop-footer"><span><span class="status-dot status-build"></span>Under construction</span><span>Q4 2025</span></div>
+        <p class="prop-desc">Pogled na more. 250m od Indijskog okeana. Moderna arhitektura sa tropskim pejzažnim uređenjem.</p>
+        <div class="prop-footer"><span><span class="status-dot status-build"></span>U izgradnji</span><span>Q4 2025</span></div>
       </div>
     </div>
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-top">Top offer</span><span class="badge badge-sold">Sold</span></div>
+        <div class="prop-badges"><span class="badge badge-top">Top ponuda</span><span class="badge badge-sold">Prodato</span></div>
       </div>
       <div class="prop-body">
-        <p class="prop-location">Indonesia, Bali, Canggu</p>
+        <p class="prop-location">Indonezija, Bali, Canggu</p>
         <p class="prop-name">Sunny Apart (SPT)</p>
-        <p class="prop-price">from $180,000 USD</p>
-        <p class="prop-desc">Luxury apartments 200m from Batu Belig beach. Mountain and rice field views. Floor 4, 43 m².</p>
-        <div class="prop-footer"><span><span class="status-dot status-done"></span>Completed</span><span>Q4 2023</span></div>
+        <p class="prop-price">od $180,000 USD</p>
+        <p class="prop-desc">Luksuzni apartmani 200m od plaže Batu Belig. Pogled na planine i pirinčana polja. Sprat 4, 43 m².</p>
+        <div class="prop-footer"><span><span class="status-dot status-done"></span>Završeno</span><span>Q4 2023</span></div>
       </div>
     </div>
 
@@ -302,69 +302,69 @@ section.country-section { padding: 64px 80px; }
 
 <!-- UK & EUROPE PROPERTIES -->
 <section class="country-section" data-country="Europe" style="background:var(--cream);">
-  <p class="section-label">Europe &amp; UK</p>
-  <h2 class="section-title" style="font-size:32px;margin-bottom:32px;">Europe &amp; United Kingdom</h2>
+  <p class="section-label">Evropa i Velika Britanija</p>
+  <h2 class="section-title" style="font-size:32px;margin-bottom:32px;">Evropa i Ujedinjeno Kraljevstvo</h2>
   <div class="props-grid">
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-top">Popular</span></div>
+        <div class="prop-badges"><span class="badge badge-top">Popularno</span></div>
       </div>
       <div class="prop-body">
-        <p class="prop-location">UK, London, Islington</p>
+        <p class="prop-location">Velika Britanija, London, Islington</p>
         <p class="prop-name">250 City Road</p>
         <p class="prop-price">$1.10M – $2.11M USD</p>
-        <p class="prop-desc">Designed by Foster + Partners. Epitome of luxury living in one of London's most vibrant neighbourhoods.</p>
-        <div class="prop-footer"><span><span class="status-dot status-done"></span>Completed</span><span>Q4 2023</span></div>
+        <p class="prop-desc">Dizajn Foster + Partners. Vrhunac luksuznog života u jednom od najživljih kvartova Londona.</p>
+        <div class="prop-footer"><span><span class="status-dot status-done"></span>Završeno</span><span>Q4 2023</span></div>
       </div>
     </div>
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1503152394-c571994fd383?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-top">Residence permit</span></div>
+        <div class="prop-badges"><span class="badge badge-top">Boravišna dozvola</span></div>
       </div>
       <div class="prop-body">
-        <p class="prop-location">Greece, Athens, Glyfada</p>
+        <p class="prop-location">Grčka, Atina, Glyfada</p>
         <p class="prop-name">Aegean Heights</p>
-        <p class="prop-price">from €390,000 EUR</p>
-        <p class="prop-desc">Luxury apartments in prestigious Athens neighbourhood qualifying for Greece Golden Visa.</p>
-        <div class="prop-footer"><span><span class="status-dot status-build"></span>Under construction</span><span>Q3 2026</span></div>
+        <p class="prop-price">od €390,000 EUR</p>
+        <p class="prop-desc">Luksuzni apartmani u prestižnom kvartu Atine koji ispunjavaju uslove za grčku Golden Visa.</p>
+        <div class="prop-footer"><span><span class="status-dot status-build"></span>U izgradnji</span><span>Q3 2026</span></div>
       </div>
     </div>
 
     <div class="prop-card">
       <div class="prop-img" style="background-image:url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=600&q=75')">
-        <div class="prop-badges"><span class="badge badge-top">Residence permit</span></div>
+        <div class="prop-badges"><span class="badge badge-top">Boravišna dozvola</span></div>
       </div>
       <div class="prop-body">
-        <p class="prop-location">Portugal, Algarve</p>
+        <p class="prop-location">Portugalija, Algarve</p>
         <p class="prop-name">Quinta da Luz</p>
-        <p class="prop-price">from €620,000 EUR</p>
-        <p class="prop-desc">Exclusive villas in one of Europe's most popular resort regions. Qualifies for Portugal Golden Visa.</p>
-        <div class="prop-footer"><span><span class="status-dot status-done"></span>Completed</span><span>Q3 2023</span></div>
+        <p class="prop-price">od €620,000 EUR</p>
+        <p class="prop-desc">Ekskluzivne vile u jednom od najpopularnijih letovališnih regiona Evrope. Ispunjava uslove za portugalsku Golden Visa.</p>
+        <div class="prop-footer"><span><span class="status-dot status-done"></span>Završeno</span><span>Q3 2023</span></div>
       </div>
     </div>
 
   </div>
-  <a href="contacts.html" class="see-all">Request a consultation →</a>
+  <a href="contacts-sr.html" class="see-all">Zakažite konsultacije →</a>
 </section>
 
 <!-- NEWSLETTER -->
 <section class="newsletter-section">
   <div class="newsletter-left">
     <div>
-      <p class="newsletter-label-small">Stay informed</p>
-      <h2 class="newsletter-title">Subscribe to our newsletter</h2>
-      <p class="newsletter-sub">Get the latest investment opportunities, market insights and exclusive deals — straight to your inbox.</p>
+      <p class="newsletter-label-small">Budite informisani</p>
+      <h2 class="newsletter-title">Prijavite se na naš newsletter</h2>
+      <p class="newsletter-sub">Primajte najnovije investicione prilike, tržišne uvide i ekskluzivne ponude — direktno u vaš inbox.</p>
     </div>
     <form class="newsletter-form" onsubmit="return false;">
-      <input type="email" class="newsletter-input" placeholder="Your email address">
-      <button type="submit" class="btn-gold">Subscribe</button>
+      <input type="email" class="newsletter-input" placeholder="Vaša email adresa">
+      <button type="submit" class="btn-gold">Prijavi se</button>
     </form>
   </div>
   <div class="footer-map-box">
-    <p class="newsletter-label-small">Our office</p>
-    <p class="map-address">Bulevar Mihajla Pupina 10, New Belgrade, Serbia</p>
+    <p class="newsletter-label-small">Naša kancelarija</p>
+    <p class="map-address">Bulevar Mihajla Pupina 10, Novi Beograd, Srbija</p>
     <p style="color:var(--muted);font-size:14px;line-height:1.8;margin-top:8px;">
       <a href="tel:+381601234567" style="color:var(--gold);text-decoration:none;">+381 60 123 4567</a><br>
       <a href="mailto:info@moonhouse.investments" style="color:var(--gold);text-decoration:none;">info@moonhouse.investments</a>
@@ -375,43 +375,43 @@ section.country-section { padding: 64px 80px; }
 <footer>
   <div class="footer-grid">
     <div>
-      <a href="index.html" class="footer-logo"><img src="moonhouse-logo.svg" alt="Moonhouse Investments"></a>
-      <p class="footer-about">We help private clients invest in international real estate. Offices in Belgrade, Dubai, Singapore, Milan, Los Angeles, Panama and Mexico. Founded 1998.</p>
+      <a href="index-sr.html" class="footer-logo"><img src="moonhouse-logo.svg" alt="Moonhouse Investments"></a>
+      <p class="footer-about">Pomažemo privatnim klijentima da investiraju u međunarodne nekretnine. Kancelarije u Beogradu, Dubaiju, Singapuru, Milanu, Los Anđelesu, Panami i Meksiku. Osnovano 1998.</p>
       <div class="footer-contact">
-        <div>Bulevar Mihajla Pupina 10, New Belgrade, Serbia</div>
+        <div>Bulevar Mihajla Pupina 10, Novi Beograd, Srbija</div>
         <div><a href="tel:+381601234567">+381 60 123 4567</a></div>
         <div><a href="mailto:info@moonhouse.investments">info@moonhouse.investments</a></div>
       </div>
     </div>
     <div class="footer-col">
-      <h4>Properties</h4>
+      <h4>Nekretnine</h4>
       <ul>
-        <li><a href="residential.html">Residential projects</a></li>
-        <li><a href="commercial.html">Commercial projects</a></li>
-        <li><a href="investments.html">Investment projects</a></li>
+        <li><a href="residential-sr.html">Stambeni projekti</a></li>
+        <li><a href="commercial-sr.html">Komercijalni projekti</a></li>
+        <li><a href="investments-sr.html">Investicioni projekti</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Company</h4>
+      <h4>Kompanija</h4>
       <ul>
-        <li><a href="about.html">About us</a></li>
-        <li><a href="about.html#team">Team</a></li>
-        <li><a href="about.html#partners">Partners</a></li>
-        <li><a href="contacts.html">Contacts</a></li>
+        <li><a href="about-sr.html">O nama</a></li>
+        <li><a href="about-sr.html#team">Tim</a></li>
+        <li><a href="about-sr.html#partners">Partneri</a></li>
+        <li><a href="contacts-sr.html">Kontakt</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Citizenship &amp; Residence</h4>
+      <h4>Državljanstvo i boravak</h4>
       <ul>
-        <li><a href="citizenship.html">Residence programs</a></li>
-        <li><a href="citizenship.html#citizenship">Citizenship by investment</a></li>
-        <li><a href="citizenship.html#uae">UAE Golden Visa</a></li>
+        <li><a href="citizenship-sr.html">Programi boravka</a></li>
+        <li><a href="citizenship-sr.html#citizenship">Državljanstvo putem investicije</a></li>
+        <li><a href="citizenship-sr.html#uae">UAE Golden Visa</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Moonhouse Investments Limited. All rights reserved.</span>
-    <span><a href="#" style="color:rgba(255,255,255,0.25);text-decoration:none;">Privacy Policy</a></span>
+    <span>© 2026 Moonhouse Investments Limited. Sva prava zadržana.</span>
+    <span><a href="#" style="color:rgba(255,255,255,0.25);text-decoration:none;">Politika privatnosti</a></span>
   </div>
 </footer>
 
@@ -434,7 +434,7 @@ section.country-section { padding: 64px 80px; }
     // Update page hero subtitle
     var heroSub = document.querySelector('.page-hero-content p');
     if (heroSub && val) {
-      heroSub.textContent = 'Showing properties in ' + val + '. Use the filter below to explore other countries.';
+      heroSub.textContent = 'Prikazane su nekretnine za ' + val + '. Koristite filter ispod da biste istražili druge zemlje.';
     }
   }
 
@@ -489,7 +489,7 @@ section.country-section { padding: 64px 80px; }
     if (!id) return;
     card.style.cursor = 'pointer';
     card.addEventListener('click', function() {
-      window.location.href = 'property.html?id=' + id;
+      window.location.href = 'property-sr.html?id=' + id;
     });
   });
 })();
